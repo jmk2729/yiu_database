@@ -1,0 +1,9 @@
+<h1>Exercises#edit</h1>
+<p>Find me in app/views/exercises/edit.html.erb</p>
+
+<form action='/exercises/update/<%=@exercise.id%>'>
+제목 : <input type="text" name="exercise_title" value='<%=@exercise.title%>'><br>
+운동 : <textarea name="exercise_exercise"><%=@exercise.exercise%></textarea><br>
+식사 : <textarea name="exercise_meal"><%=@exercise.meal%></textarea><br>
+<input type="submit" value="저장">
+</form>

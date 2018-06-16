@@ -1,2 +1,10 @@
 <h1>Foods#show</h1>
 <p>Find me in app/views/foods/show.html.erb</p>
+<%=params%>
+
+<br><br>
+<% @food.each do |food| %>
+음식 : <%=food.food_name%><br>
+칼로리 : <%=food.calorie%><br>
+-----------------------------<br>
+<% end %>

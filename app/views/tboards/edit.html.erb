@@ -1,0 +1,8 @@
+<h1>Tboards#edit</h1>
+<p>Find me in app/views/tboards/edit.html.erb</p>
+
+<form action='/tboards/update/<%=@post.id%>'>
+제목 : <input type="text" name="tboard_title" value='<%=@post.title%>'><br>
+내용 : <textarea name="tboard_content"><%=@post.content%></textarea><br>
+<input type="submit" value="저장">
+</form>

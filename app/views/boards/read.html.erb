@@ -1,0 +1,19 @@
+제목 : <%=@post.title%><br>
+내용 : <%=@post.content%><br>
+<br><br>
+------------------------------
+<br><br>
+
+<%=form_for(Comment.new, url: board_comments_path(@post.id)) do |f| %>
+  <%=f.label :content, '댓글' %>
+  <%=f.text_field :content %>
+  <%=f.submit '작성' %>
+<% end %>
+
+<br><br>
+<% @post.comments.each do |comment| %>
+  <%=comment.content %>
+  <%=link_to '[삭제]', board_comment_path(@post.id, comment.id), method: 'delete' %><br>
+<% end %>
+
+<br><br>

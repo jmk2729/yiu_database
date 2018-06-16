@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
   def index
     @post = Board.all
+    @tpost = Tboard.all
   end
   
   def new

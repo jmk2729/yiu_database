@@ -1,0 +1,10 @@
+<h1>Exercises#index</h1>
+<p>Find me in app/views/exercises/index.html.erb</p>
+<a href='/exercises/new'>운동일지 쓰기</a>
+<br><br>
+<% @exercise.each do |exercise| %>
+제목 : <%=exercise.title%><br>
+<a href='/exercises/edit/<%=exercise.id%>'>[수정]</a>
+<a href='/exercises/destroy/<%=exercise.id%>'>[삭제]</a><br>
+-----------------------------<br>
+<% end %>

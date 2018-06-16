@@ -3,22 +3,58 @@
   <head>
     <title>YiuDatabase</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <!-- 어떤 에셋을 불러올지 정의 -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <!-- <%= link_to '회원가입', new_user_path %>
-    <%= link_to '로그인', new_session_path %> -->
-    <% if session[:user_id] %>
-      <li><%= User.find_by(id: session[:user_id]).name %></li>
-      <%= link_to '로그아웃', session_path(session[:user_id]), method: 'delete' %>
-    <% else %>
-      <p id="alert"><%= alert %></p>
-      <%= link_to '회원가입', new_user_path %>
-      <%= link_to '로그인', new_session_path %>
-    <% end %>
+    <div id="global-header">
+      <div class="container">
+        <%= link_to '/homes/index' do %>
+        <div class="logo">Healthy Life</div>
+        <% end %>
+          <ul class="menu">
+            <%= link_to '/homes/index' do %>
+              <li class="item">Home</li>
+            <% end %>
+            <%= link_to '/boards/show' do %>
+              <li class="item">회원게시판</li>
+            <% end %>
+            <%= link_to '/tboards/show' do %>
+              <li class="item">트레이너 찾기</li>
+            <% end %>
+            <%= link_to '/foods/show' do %>
+              <li class="item">음식정보</li>
+            <% end %>
+            <%= link_to '/exercises/index' do %>
+              <li class="item">운동일지</li>
+            <% end %>
+            <% if session[:user_id] %>
+              <%= User.find_by(id: session[:user_id]).name %>
+              <%= link_to session_path(session[:user_id]), method: 'delete' do %>
+                <li class="item">로그아웃</li>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_path do %>
+                <li class="item">교육생 회원가입</li>
+              <% end %>
+              <%= link_to new_tuser_path do %>
+                <li class="item">트레이너 회원가입</li>
+              <% end %>
+              <%= link_to new_session_path do %>
+              <li class="item">로그인</li>
+              <%end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
+
   </body>
 </html>
