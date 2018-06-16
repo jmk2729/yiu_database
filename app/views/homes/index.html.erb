@@ -1,0 +1,12 @@
+<h1>Homes#index</h1>
+<p>Find me in app/views/homes/index.html.erb</p>
+
+<a href='/boards/new'>회원 게시판</a>
+<a href='/foods/new'>식단 관리</a>
+
+<br><br>
+<% @post.each do |post| %>
+제목 : <%=post.title%><br>
+내용 : <%=post.content%><br>
+-----------------------------<br>
+<% end %>
