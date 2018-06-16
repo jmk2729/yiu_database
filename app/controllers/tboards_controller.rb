@@ -34,4 +34,8 @@ class TboardsController < ApplicationController
   def show
     @tpost = Tboard.all
   end
+  
+  def read
+    @post = Tboard.find(params[:post_id])
+  end
 end

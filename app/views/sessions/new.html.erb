@@ -1,7 +1,17 @@
 <h1>Sessions#new</h1>
 <p>Find me in app/views/sessions/new.html.erb</p>
+<h2>회원</h2>
 <%= alert %> <br>
 <%=form_tag(sessions_path) do %>
+Email : <%=text_field_tag "email" %>
+Password : <%=password_field_tag "password" %>
+<%=submit_tag "로그인" %>
+<% end %>
+
+<br><br>
+<h2>트레이너</h2>
+<%= alert %> <br>
+<%=form_tag(tsessions_path) do %>
 Email : <%=text_field_tag "email" %>
 Password : <%=password_field_tag "password" %>
 <%=submit_tag "로그인" %>

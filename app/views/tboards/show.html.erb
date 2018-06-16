@@ -6,7 +6,9 @@
 <% @tpost.each do |tpost| %>
 제목 : <%=tpost.title%><br>
 내용 : <%=tpost.content%><br>
+<a href='/tboards/read/<%=tpost.id%>'>[보기]</a>
 <a href='/tboards/edit/<%=tpost.id%>'>[수정]</a>
 <a href='/tboards/destroy/<%=tpost.id%>'>[삭제]</a><br>
 -----------------------------<br>
 <% end %>
+

@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  get 'comments/create'
-
-  get 'comments/destroy'
-
+  
   root 'homes#index'  
+
+  get 'lectures/index'
+  get 'lectures/show'
+  get 'lectures/new'
+  get 'lectures/create'
+  get 'lectures/edit'
+  get 'lectures/update'
+  get 'lectures/destroy'
+  
+  get 'comments/create'
+  get 'comments/destroy'
   
   get 'exercises/index'
   get 'exercises/new'
@@ -23,6 +31,7 @@ Rails.application.routes.draw do
   
   get 'tboards/new'
   get 'tboards/create'
+  get 'tboards/read/:post_id' => 'tboards#read'
   get 'tboards/edit/:post_id' => 'tboards#edit'
   get 'tboards/update/:post_id' => 'tboards#update'
   get 'tboards/destroy/:post_id' => 'tboards#destroy'
@@ -33,6 +42,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :destroy]
   resources :tusers, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :tsessions, only: [:new, :create, :destroy]
   resources :boards
   resources :foods
   

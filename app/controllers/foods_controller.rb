@@ -12,7 +12,7 @@ class FoodsController < ApplicationController
                 sort: params[:food_sort]
                 )
                 
-    redirect_to '/homes/index'
+    redirect_to '/foods/show'
   end
 
   def edit

@@ -33,8 +33,11 @@
             <%= link_to '/exercises/index' do %>
               <li class="item">운동일지</li>
             <% end %>
+            <%= link_to '/lectures/index' do %>
+              <li class="item">수업</li>
+            <% end %>
             <% if session[:user_id] %>
-              <%= User.find_by(id: session[:user_id]).name %>
+              <%= Tuser.find_by(id: session[:user_id]).name %>
               <%= link_to session_path(session[:user_id]), method: 'delete' do %>
                 <li class="item">로그아웃</li>
               <% end %>

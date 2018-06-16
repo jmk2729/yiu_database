@@ -1,7 +1,8 @@
 <h1>Foods#show</h1>
 <p>Find me in app/views/foods/show.html.erb</p>
 <%=params%>
-
+<br><br>
+<a href='/foods/new'>식단 관리</a>
 <br><br>
 <% @food.each do |food| %>
 음식 : <%=food.food_name%><br>
