@@ -1,7 +1,7 @@
 <h1>제목 : <%=@post.title%></h1><br>
 <h3>내용 : <%=@post.content%></h3><br>
 <br><br>
-------------------------------
+--------------------------------------------------------------------------------------------------
 <br><br>
 
 <%=form_for(Comment.new, url: board_comments_path(@post.id)) do |f| %>
@@ -10,7 +10,8 @@
   <%=f.submit '작성' %>
 <% end %>
 
-<br><br>
+<br>
+--------------------------------------------------------------------------------------------------<br>
 <% @post.comments.each do |comment| %>
   <%=comment.content %>
   <%=link_to '[삭제]', board_comment_path(@post.id, comment.id), method: 'delete' %><br>

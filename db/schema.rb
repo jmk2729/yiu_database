@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20180616162709) do
     t.string   "title"
     t.text     "exercise"
     t.text     "meal"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_exercises_on_user_id"
   end
 
   create_table "lectures", force: :cascade do |t|

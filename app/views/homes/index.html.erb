@@ -1,28 +1,28 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
-
-<a href='/boards/new'>글쓰기</a>
-<a href='/tboards/new'>트레이너 글쓰기</a>
-
-<a href='/foods/new'>식단 관리</a>
-
-<br><br>
+<!--<h1>Homes#index</h1>-->
+<!--<p>Find me in app/views/homes/index.html.erb</p>-->
+<h1>Healthy Life</h1>
+<a href='/boards/new'>회원 글쓰기</a><br>
+--------------------------------------------------------------------------------------------------<br>
 <% @post.each do |post| %>
-제목 : <%=post.title%><br>
-내용 : <%=post.content%><br>
+<h4>제목 : <%=post.title%><br></h4>
+<h4>내용 : <%=post.content%><br></h4>
+<a href='/boards/read/<%=post.id%>'>[보기]</a>
 <a href='/boards/edit/<%=post.id%>'>[수정]</a>
 <a href='/boards/destroy/<%=post.id%>'>[삭제]</a><br>
------------------------------<br>
+--------------------------------------------------------------------------------------------------<br>
 <% end %>
 
-<br><br>
------------트레이너-----------<br><br>
+<br><br><br><br>
+<h2><<<<<<<<<<<<<<<<<<<<<트레이너>>>>>>>>>>>>>>>>>>></h2><br>
+ <a href='/tboards/new'>트레이너 글쓰기</a><br>
+--------------------------------------------------------------------------------------------------<br>
 <% @tpost.each do |tpost| %>
-제목 : <%=tpost.title%><br>
-내용 : <%=tpost.content%><br>
+<h4>제목 : <%=tpost.title%><br></h4>
+<h4>내용 : <%=tpost.content%></h4>
+<a href='/tboards/read/<%=tpost.id%>'>[보기]</a>
 <a href='/tboards/edit/<%=tpost.id%>'>[수정]</a>
 <a href='/tboards/destroy/<%=tpost.id%>'>[삭제]</a><br>
------------------------------<br>
+--------------------------------------------------------------------------------------------------<br>
 <% end %>
 
-<%=params%>
+<!--<%=params%>-->

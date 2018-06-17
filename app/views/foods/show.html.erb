@@ -1,11 +1,13 @@
-<h1>Foods#show</h1>
-<p>Find me in app/views/foods/show.html.erb</p>
-<%=params%>
+<!--<h1>Foods#show</h1>-->
+<!--<p>Find me in app/views/foods/show.html.erb</p>-->
+<!--<%=params%>-->
+<h1>음식 칼로리</h1>
 <br><br>
-<a href='/foods/new'>식단 관리</a>
+<a href='/foods/new'>음식 추가</a><br>
+------------------------------------------------<br>
 <br><br>
 <% @food.each do |food| %>
 음식 : <%=food.food_name%><br>
 칼로리 : <%=food.calorie%><br>
------------------------------<br>
+------------------------------------------------<br>
 <% end %>

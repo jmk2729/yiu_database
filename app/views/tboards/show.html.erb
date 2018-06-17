@@ -1,14 +1,15 @@
-<h1>Tboards#show</h1>
-<p>Find me in app/views/tboards/show.html.erb</p>
-<a href='/tboards/new'>트레이너 글쓰기</a>
+<!--<h1>Tboards#show</h1>-->
+<!--<p>Find me in app/views/tboards/show.html.erb</p>-->
+<h1>트레이너 홍보 게시판</h1>
+<h4><a href='/tboards/new'>트레이너 글쓰기</a></h4>
 <br><br>
------------트레이너-----------<br><br>
+----------------------------------------트레이너--------------------------------------------------<br><br>
 <% @tpost.each do |tpost| %>
-제목 : <%=tpost.title%><br>
-내용 : <%=tpost.content%><br>
+<h4>제목 : <%=tpost.title%><br></h4>
+<h4>내용 : <%=tpost.content%><br></h4>
 <a href='/tboards/read/<%=tpost.id%>'>[보기]</a>
 <a href='/tboards/edit/<%=tpost.id%>'>[수정]</a>
 <a href='/tboards/destroy/<%=tpost.id%>'>[삭제]</a><br>
------------------------------<br>
+--------------------------------------------------------------------------------------------------<br>
 <% end %>
 

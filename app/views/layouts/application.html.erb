@@ -34,16 +34,16 @@
               <li class="item">운동일지</li>
             <% end %>
             <%= link_to '/lectures/index' do %>
-              <li class="item">수업</li>
+              <li class="item">PT 수업</li>
             <% end %>
             <% if session[:user_id] %>
-              <%= Tuser.find_by(id: session[:user_id]).name %>
+              <%= User.find_by(id: session[:user_id]).name %>
               <%= link_to session_path(session[:user_id]), method: 'delete' do %>
                 <li class="item">로그아웃</li>
               <% end %>
             <% else %>
               <%= link_to new_user_path do %>
-                <li class="item">교육생 회원가입</li>
+                <li class="item">회원가입</li>
               <% end %>
               <%= link_to new_tuser_path do %>
                 <li class="item">트레이너 회원가입</li>

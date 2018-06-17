@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'exercises/edit/:exercise_id' => 'exercises#edit'
   get 'exercises/update/:exercise_id' => 'exercises#update'
   get 'exercises/destroy/:exercise_id' => 'exercises#destroy'
+  
   get 'tusers/new'
   get 'tusers/create'
   
@@ -39,7 +40,11 @@ Rails.application.routes.draw do
   
   get 'foods/create'
   
+  get 'users/create'
   resources :users, only: [:new, :create, :destroy]
+  resources :users do
+    resources :exercises
+  end
   resources :tusers, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
   resources :tsessions, only: [:new, :create, :destroy]
@@ -61,7 +66,7 @@ Rails.application.routes.draw do
   # get 'foods/destroy'
 
 
-  get 'users/create'
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
