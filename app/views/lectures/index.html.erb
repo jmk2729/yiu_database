@@ -1,2 +1,14 @@
-<h1>Lectures#index</h1>
-<p>Find me in app/views/lectures/index.html.erb</p>
+<!--<h1>Lectures#index</h1>-->
+<!--<p>Find me in app/views/lectures/index.html.erb</p>-->
+
+<h1>PT 수업</h1>
+-------------------------------------------------------------------------------------------<br>
+<% @lecture.each do |l| %>
+회원이름 : <%= l.user.name %><br>
+담당 트레이너 : <%= l.tuser.name %><br>
+횟수 : <%= l.total_count %>회<br>
+금액 : <%= l.fee %>원<br>
+수업일 : <%= l.date %><br>
+내용 : <%= l.content %><br>
+-------------------------------------------------------------------------------------------<br>
+<% end %>
